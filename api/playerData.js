@@ -58,9 +58,22 @@ const getSinglePlayer = (firebaseKey) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
+const deleteSinglePlayer = (firebaseKey) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/players/${firebaseKey}.json`, {
+    method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => resolve(data))
+    .catch(reject);
+});
+
 export {
   getPlayers,
   updatePlayer,
   createPlayer,
   getSinglePlayer,
+  deleteSinglePlayer,
 };
