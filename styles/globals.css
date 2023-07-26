@@ -18,10 +18,29 @@ a {
 }
 
 body {
-  background-image: url("https: //images-eu.ssl-images-amazon.com/images/S/pv-target-images/37db4646907901dc077d64d45ca37f9c8035af9993053ecfa9bbfbf3f29f4d4d._UY500_UX667_RI_TTW_.jpg");
-    background-color: #cccccc;
+  background-image: url("../public/photos/dodgeball 2.jpeg");
+  background-repeat: no-repeat;
+  background-color: #cccccc;
+  background-attachment: fixed;
+  background-position: center top;
+  background-size: cover;
+  color: rgb(84, 92, 204);
 }
 
-Card {
-  box-shadow: 20px 20px 50px white;
+.card {
+  box-shadow: 20px 20px 50px rgb(0, 0, 0);
+  background-color: rgba(126, 126, 126, 0.394);
+}
+
+.team {
+  display: flex;
+  justify-content: center;
+}
+
+.card-button {
+ margin: 10px;
+}
+
+.font {
+  color: rgb(84, 92, 204);
 }

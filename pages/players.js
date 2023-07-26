@@ -5,6 +5,7 @@ import { Button } from 'react-bootstrap';
 import { getPlayers } from '../api/playerData';
 import { useAuth } from '../utils/context/authContext';
 import PlayerCard from '../components/PlayerCard';
+import SearchBar from '../components/SearchBar';
 
 export default function Players() {
   const [players, setPlayers] = useState([]);
@@ -21,8 +22,9 @@ export default function Players() {
   return (
     <div className="text-center my-4">
       <Link href="/player/new" passHref>
-        <Button>Add A Player</Button>
+        <Button style={{ marginBottom: '20px' }}>Add A Player</Button>
       </Link>
+      <SearchBar />
       <div className="d-flex flex-wrap">
         {players.map((player) => (
           <PlayerCard key={player.firebaseKey} playerObj={player} onUpdate={getAllThePlayers} />
