@@ -17,18 +17,18 @@ function PlayerCard({ playerObj, onUpdate }) {
 
   return (
     <Card style={{ width: '18rem', margin: '10px' }}>
-      <Card.Img variant="top" src={playerObj.img} alt={playerObj.first_name} style={{ height: '400px' }} />
+      <Card.Img variant="top" src={playerObj.img} alt={playerObj.first_name} style={{ height: '300px' }} />
       <br />
       <Card.Body>
         <Card.Title>{playerObj.first_name} {playerObj.last_name}</Card.Title>
         <br />
         <Link href={`../player/${playerObj.firebaseKey}`} passHref>
-          <Button variant="primary">View Player</Button>
+          <Button className="card-button" variant="primary">View Player</Button>
         </Link>
         <Link href={`../player/edit/${playerObj.firebaseKey}`} passHref>
-          <Button variant="info">Edit Player</Button>
+          <Button className="card-button" variant="info">Edit Player</Button>
         </Link>
-        <Button variant="danger" onClick={deleteThisPlayer} className="m-2">
+        <Button className="card-button" variant="danger" onClick={deleteThisPlayer}>
           Delete
         </Button>
       </Card.Body>

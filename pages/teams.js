@@ -1,16 +1,17 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { Button } from 'react-bootstrap';
 import { getTeams } from '../api/teamData';
-// import { useAuth } from '../utils/context/authContext';
+import { useAuth } from '../utils/context/authContext';
 import TeamCard from '../components/TeamCard';
 
 export default function Teams() {
   const [teams, setTeams] = useState([]);
-  // const { user } = useAuth();
+  const { user } = useAuth();
 
   const getAllTeams = () => {
-    getTeams().then(setTeams);
+    getTeams(user.uid).then(setTeams);
   };
 
   useEffect(() => {

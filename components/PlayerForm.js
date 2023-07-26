@@ -91,8 +91,7 @@ function PlayerForm({ obj }) {
           aria-label="Team"
           name="team_id"
           onChange={handleChange}
-          className="mb-3"
-          value={obj.team_id}
+          className="mb-3 font"
           required
         >
           <option value="">Select a Team</option>
@@ -110,7 +109,7 @@ function PlayerForm({ obj }) {
       </FloatingLabel>
 
       <Form.Check
-        className="text-white mb-3"
+        className="font mb-3"
         type="switch"
         id="captain"
         name="captain"
