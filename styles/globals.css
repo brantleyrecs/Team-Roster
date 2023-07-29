@@ -44,3 +44,7 @@ body {
 .font {
   color: rgb(84, 92, 204);
 }
+
+.link:hover {
+  cursor: pointer;
+}
