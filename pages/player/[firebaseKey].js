@@ -29,7 +29,7 @@ export default function ViewPlayer() {
       <div className="text-white ms-5 details font">
         <h1 className="font">{playerDetails.first_name} {playerDetails.last_name}</h1>
         <Link href={`../team/${playerDetails.teamObject?.firebaseKey}`} passHref>
-          <h3 className="font">Team: {playerDetails.teamObject?.name}</h3>
+          <h3 className="font link">Team: {playerDetails.teamObject?.name}</h3>
         </Link>
         <h5 className="font">{playerDetails.captain ? ' Team Captain' : ''}</h5>
         <Link href={`../player/edit/${playerDetails.firebaseKey}`} passHref>

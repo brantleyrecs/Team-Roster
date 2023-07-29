@@ -1,43 +1,30 @@
-import { useEffect, useState } from 'react';
-// import PropTypes from 'prop-types';
-// import { Form } from 'react-bootstrap';
-import { getPlayers } from '../api/playerData';
-import { useAuth } from '../utils/context/authContext';
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Form } from 'react-bootstrap';
 
-export default function SearchBar() {
-  const { user } = useAuth();
-  const [data, setData] = useState();
-  const BarStyle = {
-    width: '20rem', background: '#F0F0F0', border: 'none', padding: '0.5rem',
-  };
-
-  useEffect(() => {
-    getPlayers(user.uid).then(setData);
-  }, [user, data]);
-
+export default function SearchBar({ onKeyUp }) {
   const handleChange = (e) => {
-    e.preventDefault();
-    const { name, value } = e.target;
-    setData((prevState) => ({
-      ...prevState,
-      [name]: value,
-    }));
+    onKeyUp(e.target.value.toLowerCase());
   };
 
   return (
     <>
-      <input
-        style={BarStyle}
-        key="search-bar"
-        value=""
-        placeholder="Search Players"
-        onChange={(e) => handleChange(e.target.value)}
-      />
+      <Form className="search">
+        <div className="search-box">
+          <input
+            className="form-control"
+            id="search"
+            name="search"
+            placeholder="Search Players"
+            onChange={handleChange}
+            type="text"
+          />
+        </div>
+      </Form>
     </>
   );
 }
 
-// SearchBar.propTypes = {
-//   search.PropTypes.shape({
-//   })
-// }
+SearchBar.propTypes = {
+  onKeyUp: PropTypes.func.isRequired,
+};
