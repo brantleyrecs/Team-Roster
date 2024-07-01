@@ -73,6 +73,7 @@ Netlify will automatically detect your project and prepopulate the settings, but
 
 - Update Firebase URL Settings
     - In Firebase under Authentication select sign in methods, scroll to Authorized domains. Add your Netlify URL.
+
         
 ## Learn More about Next.js
 To learn more about Next.js, take a look at the following resources:
